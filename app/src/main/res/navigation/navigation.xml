@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.mad.navigationdemo.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_questionFragment"
+            app:destination="@id/questionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/thankyouFragment"
+        android:name="com.mad.navigationdemo.ThankyouFragment"
+        android:label="fragment_thankyou"
+        tools:layout="@layout/fragment_thankyou" />
+    <fragment
+        android:id="@+id/questionFragment"
+        android:name="com.mad.navigationdemo.QuestionFragment"
+        android:label="fragment_question2"
+        tools:layout="@layout/fragment_question">
+        <action
+            android:id="@+id/action_questionFragment_to_thankyouFragment"
+            app:destination="@id/thankyouFragment"
+            app:popUpTo="@id/loginFragment" />
+    </fragment>
+</navigation>
